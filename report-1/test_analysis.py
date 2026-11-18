@@ -7,8 +7,14 @@ import numpy as np
 import pandas as pd
 
 from analysis import calculate_returns, calculate_matrices
-from config import TICKERS
 from data import simulated_prices
+
+# Synthetic test data only: labels are fictional. simulated_prices() needs MSFT and AMD,
+# and treats the first five as one sector and the rest as another.
+TICKERS = [
+    "AAPL", "MSFT", "NVDA", "AMD", "ORCL",  # Technology
+    "CAT", "DE", "HON", "GE", "RTX",       # Industrials
+]
 
 
 class TestLeadLag(unittest.TestCase):
